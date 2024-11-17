@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import words from './words.json'; // Import the JSON file
+import './Game.css'; // Import the game-specific CSS file
 
 function Game({ goBackToStart }) { // Receive goBackToStart function as a prop
   const [word, setWord] = useState(''); // Current word to type
@@ -13,7 +14,7 @@ function Game({ goBackToStart }) { // Receive goBackToStart function as a prop
   };
 
   // Function to handle the score update
-const updateScore = (wordLength) => {
+  const updateScore = (wordLength) => {
     let newScore = score;
   
     if (wordLength >= 10) {
@@ -40,28 +41,27 @@ const updateScore = (wordLength) => {
     }
   };
   
-  
-
   // Generate the first word on component mount
   useEffect(() => {
     generateWord();
   }, []);
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+    <div className="game-container"> {/* Apply the 'game-container' class here */}
       <h1>TypR</h1>
       <h2>Type this word:</h2>
-      <p style={{ fontSize: '24px', fontWeight: 'bold' }}>{word}</p>
+      <p>{word}</p>
       <input
         type="text"
         value={input}
         onChange={handleChange}
-        style={{ padding: '10px', fontSize: '18px' }}
+        className="input-field" // Apply 'input-field' class for styling
       />
-      <h2 style={{ marginTop: '20px' }}>$txt: {score}</h2> {/* Display the score */}
-      <button onClick={goBackToStart}>Back</button> {/* Back button to go to start screen */}
+      <h2>$txt: {score}</h2> {/* Display the score */}
+      <button onClick={goBackToStart} className="back-button">Back</button> {/* Back button with class */}
     </div>
   );
 }
 
 export default Game;
+

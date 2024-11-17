@@ -1,0 +1,93 @@
+/* game.css */
+
+body {
+    background: radial-gradient(circle, #000000, #0000ff);
+}
+
+/* Center the game content */
+.game-container {
+    text-align: center;
+    margin-top: 150px;
+    
+  }
+  
+  /* Style the heading */
+  .game-container h1 {
+    font-size: 3em;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  .game-container h2 {
+    font-size: 1.5em;
+    color: #555;
+    margin-top: 20px;
+  }
+  
+  .game-container p {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-top: 10px;
+  }
+  
+  /* Style the input field */
+  .game-container input[type="text"] {
+    padding: 10px;
+    font-size: 18px;
+    margin-top: 20px;
+    width: 200px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  /* Focus state for input */
+  .game-container input[type="text"]:focus {
+    border-color: #007bff;
+  }
+  
+  /* Style for the score display */
+  .game-container h2 {
+    margin-top: 20px;
+    color: #4caf50;
+    font-size: 1.25em;
+  }
+  
+  /* Style the Back button */
+  .game-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  /* Hover effect for the button */
+  .game-container button:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Add responsive design for smaller screens */
+  @media screen and (max-width: 600px) {
+    .game-container {
+      margin-top: 20px;
+    }
+  
+    .game-container input[type="text"] {
+      width: 80%;
+    }
+  
+    .game-container h1 {
+      font-size: 2.5em;
+    }
+  
+    .game-container h2 {
+      font-size: 1.2em;
+    }
+  }
+  
