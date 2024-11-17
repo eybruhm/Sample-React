@@ -26,6 +26,7 @@ function Start({ startGame }) { // Receive startGame function as a prop
       <button className="Start-Button-Account">Profile</button>
       <img src={typRLogo} className="Start-Animation-Icon" alt="Icon" />
       <button className="Start-Button-Start" onClick={startGame}>Start</button> {/* Start the game */}
+      
       <div className="Start-Navigation-Container">
         <button className="Start-Button-Shop">Shop</button>
         <button className="Start-Button-Tasks">Tasks</button>
