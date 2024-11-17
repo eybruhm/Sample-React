@@ -57,7 +57,7 @@ function Game({ goBackToStart }) { // Receive goBackToStart function as a prop
         onChange={handleChange}
         className="input-field" // Apply 'input-field' class for styling
       />
-      <h2>$txt: {score}</h2> {/* Display the score */}
+      <h2>$TXT: {score}</h2> {/* Display the score */}
       <button onClick={goBackToStart} className="back-button">Back</button> {/* Back button with class */}
     </div>
   );
