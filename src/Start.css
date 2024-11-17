@@ -1,39 +1,147 @@
+/* Main container for the entire page */
 .Start-Box {
-    background-color: #3e67b8;
-    height: 100vh;
-    width: 100vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-        "pfp space space space space"
-        "space icon icon icon space"
-        "space icon icon icon space"
-        "space start start start space"
-        "nav nav nav nav nav"
-    ;
+    display: flex;
+    flex-direction: column; /* Arrange elements vertically */
+    align-items: center; /* Center elements horizontally */
+    justify-content: space-between; /* Distribute space between elements */
+    height: 100vh; /* Full height of the viewport */
+    position: relative; /* For absolute positioning of the top-left button */
+    text-align: center;
+    font-family: 'Mokoto', sans-serif;
 }
 
+/* If you want to apply Mokoto only to specific elements */
+.Start-Button-Account, 
+.Start-Button-Start, 
+.Start-Button-Shop, 
+.Start-Button-Tasks {
+  font-family: 'Mokoto', sans-serif;
+}
+
+/* Top-left button styles */
 .Start-Button-Account {
-    width: 70px;
-    height: 70px;
-    grid-area: pfp;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    text-align: center;
+    line-height: 100px; /* Vertically center text */
 }
 
-
+/* Centered animation icon */
 .Start-Animation-Icon {
-    background-position: center;
-    background-size: cover;
-    grid-area: icon;
+    width: 250px;
+    height: 250px;
+    object-fit: contain; /* Ensures the image fits within the container */
+    margin-top: 130px; /* Position the icon lower */
+    margin-bottom: 10px; /* Space between the image and the start button */
 }
 
+/* Start button styles */
 .Start-Button-Start {
-    grid-area: start;
+    margin-bottom: 60%; /* 10px space below the Start-Animation-Icon */
+    padding: 12px 24px; /* Adjust padding to make the button a bit larger */
+    font-size: 16px; /* Adjust font size */
+    color: white; /* Button text color */
+    background-color: #007bff; /* Button background color */
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add transition on hover */
 }
 
+/* Hover effect for start button */
+.Start-Button-Start:hover {
+    background-color: #0056b3; /* Darken color on hover */
+}
 
+/* Navigation container styles */
 .Start-Navigation-Container {
     background-color: rgb(88, 64, 64);
-    grid-area: nav;
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between; /* Even spacing between buttons */
+    width: 80%;
+    position: absolute;
+    bottom: 20px; /* Position the container at the bottom */
 }
 
+/* Buttons inside the navigation container */
+.Start-Navigation-Container button {
+    flex: 1; /* Make buttons take equal width */
+    margin: 0 10px; /* Even margins between buttons */
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+
+
+
+
+/* TonConnect button styles */
+.ton-connect-button {
+    display: inline-block;       /* Ensure the button respects box styling */
+    background-color: #f0f0f0;   /* Light grey background */
+    font-size: 15px;             /* Adjust font size */
+    color: black;                /* Set font color */
+    padding: 10px 20px;          /* Add some padding */
+    border: 1px solid #ccc;      /* Add a border */
+    border-radius: 5px;          /* Rounded corners */
+    cursor: pointer;             /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+
+}
+
+/* Hover effect for TonConnect button */
+.ton-connect-button:hover {
+    background-color: #e0e0e0;   /* Slightly darker on hover */
+}
+
+/* Optional: Custom styles for child elements */
+.ton-connect-button div[data-tc-text="true"] {
+    color: black;
+    font-weight: 600;
+}
+
+
+
+
+.ton-connect-button {
+    display: inline-block;       /* Ensure the button respects box styling */
+    background-color: #f0f0f0;   /* Light grey background */
+    font-size: 15px;             /* Adjust font size */
+    color: black;                /* Set font color */
+    padding: 10px 20px;          /* Add some padding */
+    border: 1px solid #ccc;      /* Add a border */
+    border-radius: 5px;          /* Rounded corners */
+    cursor: pointer;             /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .ton-connect-button:hover {
+    background-color: #e0e0e0;   /* Slightly darker on hover */
+  }
+  
+  /* Optional: Custom styles for child elements */
+  .ton-connect-button div[data-tc-text="true"] {
+    color: black;
+    font-weight: 600;
+  }
+  
+
+/* Styling for the TonConnect button */

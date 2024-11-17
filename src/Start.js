@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { TonConnectButton, useTonConnectUI } from '@tonconnect/ui-react'; // Correct imports
 import startIcon from './img-start-icon.gif';
+import typRLogo from './typr-logo.png';
+import './Start.css';
 
-function Start() {
+function Start({ startGame }) { // Receive startGame function as a prop
   const [walletConnected, setWalletConnected] = useState(false);
 
   const { state, open, close } = useTonConnectUI(); // Get TonConnect UI hook
@@ -22,19 +24,13 @@ function Start() {
   return (
     <div className="Start-Box">
       <button className="Start-Button-Account">Profile</button>
-      <img src={startIcon} className="Start-Animation-Icon" alt="Icon" />
-      <button className="Start-Button-Start" onClick={connectToWallet}>
-        {walletConnected ? 'Wallet Connected' : 'Connect to TON Wallet'}
-      </button>
-
+      <img src={typRLogo} className="Start-Animation-Icon" alt="Icon" />
+      <button className="Start-Button-Start" onClick={startGame}>Start</button> {/* Start the game */}
       <div className="Start-Navigation-Container">
-        nav container
         <button className="Start-Button-Shop">Shop</button>
         <button className="Start-Button-Tasks">Tasks</button>
-        <button className="Start-Button-Wallet">TON</button>
+        <TonConnectButton className="ton-connect-button" /> {/* Use TON Connect Button */}
       </div>
-
-      <TonConnectButton className="ton-connect-button" /> {/* Use TON Connect Button */}
     </div>
   );
 }
