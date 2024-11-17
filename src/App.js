@@ -1,37 +1,36 @@
 import React, { useState } from 'react';
 import './App.css';
-import { TonConnectUIProvider } from '@tonconnect/ui-react'; // Import TonConnect UI Provider
-import Start from './Start'; // Import your Start component
+import { TonConnectUIProvider } from '@tonconnect/ui-react';
+import Start from './Start';
 import Game from './Game';
+import Blank from './Blank';
 
-// Your manifest URL
-const manifestUrl = 'http://localhost:3000//tonconnect-manifest.json';
+const manifestUrl = 'http://sample-react-rose.vercel.app/tonconnect-manifest.json';
 
 function App() {
-  const [showGame, setShowGame] = useState(false); // State to control which component to show
+  const [screen, setScreen] = useState('start'); // Track which screen to display
 
-  // Function to switch to the game screen
-  const startGame = () => {
-    setShowGame(true);
-  };
-
-  // Function to switch back to the start screen
-  const goBackToStart = () => {
-    setShowGame(false);
-  };
+  const startGame = () => setScreen('game'); // Navigate to Game
+  const goBackToStart = () => setScreen('start'); // Navigate back to Start
+  const navigateToShop = () => setScreen('blank'); // Navigate to Blank for Shop
+  const navigateToTasks = () => setScreen('blank'); // Navigate to Blank for Tasks
 
   return (
-    // Wrap the entire app with TonConnectUIProvider and pass the manifestUrl
     <TonConnectUIProvider manifestUrl={manifestUrl}>
       <div className="App">
-        {showGame ? (
-          <Game goBackToStart={goBackToStart} /> // Pass goBackToStart to Game component
-        ) : (
-          <Start startGame={startGame} /> // Pass startGame to Start component
+        {screen === 'start' && (
+          <Start 
+            startGame={startGame} 
+            navigateToShop={navigateToShop} 
+            navigateToTasks={navigateToTasks} 
+          />
         )}
+        {screen === 'game' && <Game goBackToStart={goBackToStart} />}
+        {screen === 'blank' && <Blank goBackToStart={goBackToStart} />}
       </div>
     </TonConnectUIProvider>
   );
 }
 
 export default App;
+

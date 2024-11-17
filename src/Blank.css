@@ -1,0 +1,45 @@
+/* Styling for Blank.js */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive; /* Pixelated font */
+  }
+  
+  .blank-container {
+    background-color: black; /* Set background to black */
+    color: red; /* Red text */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Align content to the left */
+    padding-left: 40px; /* Add left padding for alignment */
+  }
+  
+  .blank-title {
+    font-size: 64px; /* Large, bold title */
+    margin: 0;
+  }
+  
+  .blank-message {
+    font-size: 24px; /* Smaller message text */
+    margin: 20px 0;
+  }
+  
+  .blank-button {
+    background-color: red; /* Red button */
+    color: black; /* Black text */
+    font-size: 18px; /* Larger font for button */
+    padding: 10px 20px; /* Add padding for a better button size */
+    border: none; /* Remove border */
+    border-radius: 25px; /* Rounded button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-family: 'Press Start 2P', cursive; /* Match the pixelated font */
+    transition: all 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .blank-button:hover {
+    background-color: white; /* Change background to white on hover */
+    color: red; /* Change text color to red */
+  }
+  
